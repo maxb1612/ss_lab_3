@@ -1,0 +1,38 @@
+﻿@model WebApplication1.ViewModels.ActivationViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="py-5" style="">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto col-md-5">
+                <h1>Активація</h1>
+                <p class="mb-3"></p>
+                @if (!Model.IsActivated)
+                {
+                    <a class="btn-primary" asp-action="ShowKey">Отримати ключ</a>
+                    <form class="text-left" method="post">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group mb-3">
+                            <label for="form19" asp-for="ActivationKey">Введіть ключ активації</label>
+                            <input asp-for="ActivationKey" type="text" class="form-control" id="form19" required="required" name="activationKey">
+                            <img src="/Captcha/@Model.CaptchaName" alt="captcha"/>
+                            <label for="form20" asp-for="CaptchaText">Capthca</label>
+                            <input asp-for="CaptchaText" type="text" class="form-control" id="form20" name="CaptchaText">
+                            <input asp-for="CaptchaName" name="CaptchaName" value="@Model.CaptchaName" type="hidden"/>
+                        </div>
+                        <div class="form-group"></div>
+                        <button type="submit" class="btn btn-primary">Активувати</button>
+                    </form>
+                }
+                else
+                {
+                    <H1>Аккаунт активовано</H1>
+                }
+            </div>
+        </div>
+    </div>
+</div>

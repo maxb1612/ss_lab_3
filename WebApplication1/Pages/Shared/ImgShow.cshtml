@@ -1,0 +1,18 @@
+﻿@model WebApplication1.ViewModels.ImgViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<div class="container-fluid">
+    <img width="256" class="justify-content-center" src="/Uploads/@Model.Img" alt="not found"/>
+    <div class="justify-content-center">
+        
+        <p>@Model.Img</p>
+        <p>Формат: @Model.Format</p>
+        <p>Ширина: @Model.Width px</p>
+        <p>Висота: @Model.Height px</p>
+        <p>Розмір: @Model.Size bytes</p>
+    </div>
+</div>

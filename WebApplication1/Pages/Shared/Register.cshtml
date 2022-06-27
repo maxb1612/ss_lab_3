@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model WebApplication1.ViewModels.RegisterViewModel
+
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="py-5" style="">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-md-5">
+        <h1>Реєстрація</h1>
+        <p class="mb-3"></p>
+        <form class="text-left" method="post">
+          <div asp-validation-summary="All" class="text-danger"></div>
+          <div class="form-group mb-3"> <label for="form19" asp-for="Email">E-mail адреса</label> <input asp-for="Email" type="email" class="form-control" id="form19" required="required" name="email"> </div>
+          <div class="form-row mb-3">
+            <div class="form-group col-md-12"> <label for="form20" asp-for="Password">Пароль</label> <input asp-for="Password" type="password" class="form-control" id="form20" required="required"  name="password"> </div>
+          </div>
+          <div class="form-group"></div> <button type="submit" class="btn btn-primary">Зареєструватися</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
